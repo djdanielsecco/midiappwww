@@ -50,9 +50,10 @@
  div.bbb {
  	font-family: "OpenSans";
  	color: whitesmoke;
+	 font-size: 14px;
  	border: 2px solid #BBB;
  	width: 200px;
- 	height: 31px;
+ 	height: 28px;
 
  	overflow: auto;
  	margin: 1em;
@@ -63,11 +64,11 @@
 
  div.eee {
  	font-family: "OpenSans";
-
+ font-size: 14px;
  	color: whitesmoke;
  	border: 2px solid #BBB;
  	width: 200px;
- 	height: 31px;
+ 	height: 28px;
 
  	overflow: auto;
  	margin: 1em;
@@ -114,9 +115,11 @@
  	font-family: "OpenSans";
  	font-size: 12px;
  	color: whitesmoke;
+	 align-content: center;
+	text-align: left;
  	width: 532px;
  	min-height: 200px;
- 	max-height: 500px;
+ 	max-height: auto;
  	border: 2px solid #BBB;
  	margin: 0px;
  	padding: 0px;
