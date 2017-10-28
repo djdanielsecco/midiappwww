@@ -1,0 +1,145 @@
+ @font-face {
+ 	font-family: 'OpenSans';
+ 	src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+ 	font-size: 1em;
+ }
+
+ @font-face {
+ 	font-family: 'OpenSans-Light';
+ 	src: url("../fonts/Open_Sans/OpenSans-Light.ttf");
+ 	font-size: 1em;
+ }
+
+ 	{
+ 	box-sizing: border-box;
+ }
+
+ html,
+ body {
+
+ 	margin: 0;
+ 	padding: 0;
+ 	background-color: rgb(49, 49, 49);
+ }
+
+ h4.tite {
+ 	font-family: "OpenSans";
+
+ 	color: whitesmoke;
+
+ 	margin-bottom: 7px;
+ 	margin: 15px;
+ 	align-content: center;
+ 	text-align: center;
+ }
+
+ #con {
+ 	width: inherit;
+ 	position: absolute;
+ 	margin-left: 0px;
+
+ }
+
+ #logo {
+
+ 	position: relative;
+ 	top: 29px;
+ 	margin-left: 91px;
+ }
+
+ div.bbb {
+ 	font-family: "OpenSans";
+ 	color: whitesmoke;
+ 	border: 2px solid #BBB;
+ 	width: 200px;
+ 	height: 31px;
+
+ 	overflow: auto;
+ 	margin: 1em;
+ 	padding: 0px;
+ 	margin-bottom: -1px;
+ 	margin-top: -1px;
+ }
+
+ div.eee {
+ 	font-family: "OpenSans";
+
+ 	color: whitesmoke;
+ 	border: 2px solid #BBB;
+ 	width: 200px;
+ 	height: 31px;
+
+ 	overflow: auto;
+ 	margin: 1em;
+ 	padding: 0px;
+ 	margin-bottom: -1px;
+ 	margin-top: -1px;
+
+ }
+
+ div.aaa {
+ 	border: 2px solid #BBB;
+ 	width: 240px;
+ 	min-height: 200px;
+ 	max-height: 500px;
+ 	overflow: auto;
+ 	float: left;
+ 	margin: 1em;
+ 	padding: 0px;
+ }
+
+ div.ddd {
+
+ 	border: 2px solid #BBB;
+ 	width: 240px;
+ 	min-height: 200px;
+ 	max-height: 500px;
+ 	overflow: auto;
+ 	padding: 0px;
+ 	margin: 1em;
+ }
+
+ .ccc {
+
+ 	width: auto;
+ 	border: 2px solid #BBB;
+ 	overflow: auto;
+ 	float: left;
+ 	margin: 0px;
+ 	padding: 0px;
+ 	margin-right: 0px;
+ }
+
+ div.fff {
+ 	font-family: "OpenSans";
+ 	font-size: 12px;
+ 	color: whitesmoke;
+ 	width: 532px;
+ 	min-height: 200px;
+ 	max-height: 500px;
+ 	border: 2px solid #BBB;
+ 	margin: 0px;
+ 	padding: 0px;
+ 	float: left;
+ 	margin-top: 33px;
+ }
+
+ .mold {
+ 	width: inherit;
+ 	border: 2px solid #ccc;
+ 	position: absolute;
+ 	display: block;
+ 	top: 14em;
+ 	padding: 27px;
+
+ }
+
+ .cf:before,
+ .cf:after {
+ 	content: " ";
+ 	display: table;
+ }
+
+ .cf:after {
+ 	clear: both;
+ }
