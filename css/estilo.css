@@ -1,13 +1,13 @@
  @font-face {
  	font-family: 'OpenSans';
  	src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
- 	font-size: 1em;
+ 	
  }
 
  @font-face {
  	font-family: 'OpenSans-Light';
  	src: url("../fonts/Open_Sans/OpenSans-Light.ttf");
- 	font-size: 1em;
+ 	
  }
 
  	{
@@ -44,7 +44,7 @@
 
  	position: relative;
  	top: 29px;
- 	margin-left: 91px;
+ 	margin-left: 99px;
  }
 
  div.bbb {
@@ -52,7 +52,7 @@
  	color: whitesmoke;
 	 font-size: 14px;
  	border: 2px solid #BBB;
- 	width: 200px;
+ 	width: 215px;
  	height: 28px;
 
  	overflow: auto;
@@ -67,7 +67,7 @@
  font-size: 14px;
  	color: whitesmoke;
  	border: 2px solid #BBB;
- 	width: 200px;
+ 	width: 215px;
  	height: 28px;
 
  	overflow: auto;
