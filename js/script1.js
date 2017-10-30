@@ -103,12 +103,13 @@ window.onload = function () {
 		inputs = midiAccess.inputs;
 		html = '<h4>midi inputs:</h4>';
 		inputs.forEach(function (port) {
-			//console.log('in', port.name, port.id);
+			console.log('in', port.name, port.id);
 			html += '<label><input type="checkbox" id="' + port.type + port.id + '">' + port.name + ' (' + port.state + ', ' + port.connection + ')</label><br>';
 		});
 		divInputs.innerHTML = html;
 
 		outputs = midiAccess.outputs;
+
 		html = '<h4>midi outputs:</h4>';
 		outputs.forEach(function (port) {
 			//console.log('out', port.name, port.id);
@@ -321,17 +322,16 @@ window.onload = function () {
 		// do something graphical with the incoming midi data
 		divLog.innerHTML = type + ' ' + data1 + ' ' + data2 + '<br>' + divLog.innerHTML;
 
-		
-		
-	var arr = [];
-	for (var i = 0; i < midimessageEvent.data.length; i++) {
-		arr.push((midimessageEvent.data[i] < 16 ? '0' : '') + midimessageEvent.data[i].toString(16));
-	}
-	console.log('MIDI:', arr.join(' '));
+
+
+		var arr = [];
+		for (var i = 0; i < midimessageEvent.data.length; i++) {
+			arr.push((midimessageEvent.data[i] < 16 ? '0' : '') + midimessageEvent.data[i].toString(16));
+		}
+		console.log('MIDI:', arr.join(' '));
 		divLog9.innerHTML = arr.join(' ') + '<br>' + divLog9.innerHTML;
-		
-		
-		
+
+
 		for (portId in activeOutputs) {
 			if (activeOutputs.hasOwnProperty(portId)) {
 				port = activeOutputs[portId];
@@ -349,30 +349,32 @@ window.onload = function () {
 		}
 
 		if (midimessageEvent.data.length > 1) {
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
+
+
+
+
+
+
+
+
 			console.log(extractMidiCommand(midimessageEvent.data));
 			divLog1.innerHTML = "Fre:  " + tarimai.frequency + '<br>' + divLog1.innerHTML;
 			divLog2.innerHTML = "CMD: " + tarimai.cmdName + '<br>' + divLog2.innerHTML;
 			divLog3.innerHTML = "Channel:  " + tarimai.channel + '<br>' + divLog3.innerHTML;
-			divLog4.innerHTML = "CINdex:  " + tarimai.cmd + '<br>' + divLog4.innerHTML;
-			divLog5.innerHTML = "p1:  " + tarimai.data1 + '<br>' + divLog5.innerHTML;
-			divLog6.innerHTML = "p2:  " + data2 + '<br>' + divLog6.innerHTML;
-		} else if (event.data[0] > 239) { //ignore clock for now
+			divLog4.innerHTML = "Data:  " + tarimai.cmd + '<br>' + divLog4.innerHTML;
+			divLog5.innerHTML = "Data1  " + tarimai.data1 + '<br>' + divLog5.innerHTML;
+			divLog6.innerHTML = "Data2:  " + data2 + '<br>' + divLog6.innerHTML;
+			divLog10.innerHTML = "Port " + midimessageEvent.currentTarget.name + '<br>' + divLog10.innerHTML;
+			divLog11.innerHTML = "TIME:" + midimessageEvent.timeStamp + '<br>' + divLog11.innerHTML;
+		} else if (midimessageEvent.data[0] > 239) { //ignore clock for now
 
 			console.log(extractMidiRealtime(midimessageEvent.data));
 			divLog8.innerHTML = extractMidiRealtime(midimessageEvent.data) + '<br>' + divLog8.innerHTML;
-			
-			
-			
-			
+
+
+
+
 
 		}
 
@@ -408,39 +410,39 @@ window.onload = function () {
 		}
 	};
 
-
-
-	if (navigator.requestMIDIAccess) {
-		navigator.requestMIDIAccess()
-			.then(success, failure);
-	}
-
-	function success(midi) {
-		var inputs = midi.inputs.values();
-		// inputs is an Iterator
-
-		for (var input = inputs.next(); input && !input.done; input = inputs.next()) {
-			// each time there is a midi message call the onMIDIMessage function
-			//input.value.onmidimessage = onMIDIMessage;
-		}
-	}
-
-	function failure() {
-		console.error('No access to your midi devices.')
-	}
 	/*
-function onMIDIMessage (message) {
-    var frequency = midiNoteToFrequency(message.data[1]);
- 
-    if (message.data[0] === 144 && message.data[2] > 0) {
-        playNote(frequency);
-    }
- 
-    if (message.data[0] === 128 || message.data[2] === 0) {
-        stopNote(frequency);
-    }
-}
- */
+
+		if (navigator.requestMIDIAccess) {
+			navigator.requestMIDIAccess()
+				.then(success, failure);
+		}
+
+		function success(midi) {
+			var inputs = midi.inputs.values();
+			// inputs is an Iterator
+	console.log(inputs);
+			for (var input = inputs.next(); input && !input.done; input = inputs.next()) {
+				// each time there is a midi message call the onMIDIMessage function
+				//input.value.onmidimessage = onMIDIMessage;
+			}
+		}
+
+		function failure() {
+			console.error('No access to your midi devices.')
+		}
+		/*
+	function onMIDIMessage (message) {
+	    var frequency = midiNoteToFrequency(message.data[1]);
+	 
+	    if (message.data[0] === 144 && message.data[2] > 0) {
+	        playNote(frequency);
+	    }
+	 
+	    if (message.data[0] === 128 || message.data[2] === 0) {
+	        stopNote(frequency);
+	    }
+	}
+	 */
 	function midiNoteToFrequency(note) {
 		return Math.pow(2, ((note - 69) / 12)) * 440;
 	}
