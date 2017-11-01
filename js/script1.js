@@ -15,8 +15,7 @@ window.onload = function () {
 		divLog9 = document.getElementById('con11'),
 		divLog10 = document.getElementById('con12'),
 		divLog11 = document.getElementById('con13'),
-		divLog12 = document.getElementById('con14'),
-		divLog13 = document.getElementById('con15'),
+		
 		divInputs = document.getElementById('inputs'),
 		divOutputs = document.getElementById('outputs'),
 		midiAccess,
